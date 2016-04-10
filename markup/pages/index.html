@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+
+            <!-- Include your modules here -->
+
+            {{> header/header}}
+            {{> navigation/navigation}}
+            {{> services/services-main}}
+            <main class="main">
+                {{> slider/slider-main}}
+                
+                
+            </main>
+            {{> footer/footer}}
+
+
+
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <!-- Main scripts -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+    </body>
+
+</html>

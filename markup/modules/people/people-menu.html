@@ -1,0 +1,16 @@
+<div class="people-menu">
+    <div class="people-menu__tabs">
+        {{#each people.tabs}}
+        <div class="people-menu__tab" id="{{this}}">
+            <div>
+                {{> arrow/arrow-navigation}} {{this}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="people-menu__items">
+        {{> people/people-menu__search}}
+        {{> people/people-menu__practices}}
+        {{> people/people-menu__sectors}}
+    </div>
+</div>

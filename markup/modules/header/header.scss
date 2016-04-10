@@ -1,0 +1,51 @@
+.header {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    height: 52px;
+    align-items: center;
+    &.load{
+      animation: fadeOut;
+  animation-duration: 1s; 
+  opacity: 1;
+    }
+    @media($media-sm) {
+        height: 74px;
+        padding-top: 9px;
+    }
+    @media($media-md) {
+        height: 105px;
+    }
+    &__left {
+        transiton: .3s;
+        position: relative;
+        @media screen and ($fixed-xs) {
+            position: relative;
+            left: 0;
+            transition: .5s;
+            &.hidden {
+                margin-left: -200%;
+            }
+        }
+        @media ($media-sm) {
+            flex-basis: 350px;
+        }
+    }
+    &__right {
+        transiton: .5s;
+        @media($fixed-xs) {
+            padding-right: 26px;
+        }
+    }
+   /*&.active {
+       .header {
+           &__left {
+               opacity: 0;
+               @media($media-sm) {
+                   opacity: 1;
+               }
+           }
+           &__right {}
+       }
+   } */
+}

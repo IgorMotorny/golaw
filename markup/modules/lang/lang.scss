@@ -1,0 +1,88 @@
+.lang {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    overflow: visible;
+    height: 18px;
+    margin-right: 14px;
+    text-transform: uppercase;
+    position: relative;
+    @media($media-sm){
+        margin-right: 27px;
+        margin-top: 4px;
+    }
+    &__list {
+        display: inline-block;
+        background-color: $white;
+        vertical-align: top;
+        list-style: none;
+        padding-left: 10px;
+        padding-right: 25px;
+        font-weight: bold;
+        margin: 0;
+        height: 19px;
+        overflow: hidden;
+        cursor: default;
+        transition: height .2s;
+        color: $blue;
+    }
+    &__item {
+        transition: color .3s;
+        padding-bottom: 16px;
+        cursor: pointer;
+        &:not(.active):hover {
+            color: $red;
+        }
+    }
+    &__icon {
+        position: absolute;
+        right: 4px;
+        top: 7px;
+        display: block;
+        transition: transform .3s;
+    }
+    &.active {
+        position: relative;
+        z-index: 10;
+        .lang__icon {
+            transform: scaleY(-1);
+        }
+    }
+    &-navigation {
+        font-family: $gotham;
+        font-weight: 800;
+        display: block;
+        text-align: center;
+        margin-top: 24px;
+        text-transform: uppercase;
+         @media ($media-sm) {
+            margin-right: 100 / 6 * 1%;
+        } 
+        @media ($media-sm) {
+            margin-right: 9%;
+        }
+        &__list {
+            @extend .lang__list;
+            background-color: transparent;
+            color: $white;
+        }
+        &__item {
+            cursor: pointer;
+            display: inline-block;
+            opacity: .5;
+            transition: .3s;
+            padding-left: 10px;
+            padding-right: 11px;
+            &.active,
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.header.active {
+    .lang {
+        opacity: 0;
+    }
+}

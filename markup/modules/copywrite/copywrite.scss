@@ -1,0 +1,58 @@
+.copywrite {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 46px;
+    font-size: 11px;
+    @media($media-sm) {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__customer {
+        margin-top: 27px;
+        margin-bottom: 10px;
+        @media($media-sm) {
+            margin: 0;
+        }
+    }
+    &__link {
+        text-decoration: none;
+    }
+    &__icon {
+        height: 16px;
+        fill: $white;
+        transition: .2s;
+        &:hover {
+            fill: $red;
+        }
+    }
+    &-footer {
+        text-align: center;
+        font-size: 11px;
+        &__customer {
+            margin-bottom: 15px;
+            color: $gray;
+            text-align: center;
+            font-family: "Myriad Pro";
+            @media($media-sm) {
+                margin-bottom: 0;
+                flex-basis: 220px;
+                flex-grow: 1;
+            }
+        }
+        &__vintage {}
+        &__icon {
+            height: 16px;
+            fill: $blue;
+            transition: .2s;
+            &:hover {
+                fill: $red;
+            }
+            @media($media-sm) {
+                fill: $red;
+                &:hover {
+                    fill: $blue;
+                }
+            }
+        }
+    }
+}

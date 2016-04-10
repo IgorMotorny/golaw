@@ -1,0 +1,46 @@
+.services-menu {
+    display: none;
+    &.active {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 100%;
+    }
+    &__block {
+        flex-basis: 40%;
+    }
+    &__title {
+        font-family: $gotham;
+        font-weight: 800;
+        margin-bottom: 38px;
+        font-size: 10px;
+        text-transform: uppercase;
+        display: block;
+        color: $white;
+        text-decoration: none;
+    }
+    &__link {
+        display: block;
+        color: $white;
+        text-decoration: none;
+        margin-bottom: 13px;
+        &:hover {
+            .arrow-navigation {
+                margin-left: -15px;
+                margin-right: 5px;
+                width: 43px;
+                &__icon {
+                    width: 37px;
+                    &:before {
+                        width: 5px;
+                        transform: rotate(70deg) translateX(-50%);
+                    }
+                    &:after {
+                        width: 5px;
+                        transform: rotate(110deg) translateX(50%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<nav class="navigation">
+    <div class="navigation__content">
+        <div class="navigation__header">
+            {{> logo/logo-navigation}} {{> lang/lang-navigation}}
+        </div>
+        <div class="navigation__left">
+            <ul class="navigation__list">
+                {{#each navigation.items}}
+                <li class="navigation__item">
+                    <a href="{{this}}.html" id="{{this}}" class="navigation__link">
+                
+                    <div>{{> arrow/arrow-navigation}}
+                        {{this}}</div>
+                    </a>
+                </li>
+                {{/each}}
+                <li class="navigation__item">
+                    <a href="contacts.html" id="contacts" class="navigation__link navigation__contacts">
+                
+                    <div>{{> arrow/arrow-navigation}}
+                        contact us</div>
+                    </a>
+                </li>
+            </ul>
+            {{> social/social}}
+        </div>
+        <div class="navigation__right">
+            {{> services/services-menu}}
+            {{> people/people-menu}}
+            {{> insights/insights-menu}} 
+        </div>
+        <div class="navigation__footer">
+            {{> copywrite/copywrite}}
+        </div>
+    </div>
+</nav>

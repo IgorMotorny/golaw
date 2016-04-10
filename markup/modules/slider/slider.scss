@@ -1,0 +1,197 @@
+.slider-main {
+    animation-duration: 2s;
+    $time: 1s;
+    position: relative;
+    overflow-x: hidden;
+    background-color: $red;
+    color: $white;
+    padding-bottom: 44px;
+    @media ($media-sm) {
+        background-color: inherit;
+        padding-bottom: 52px;
+    }
+    @media($media-md) {
+        padding-bottom: 48px;
+        min-height: calc(100vh - 105px - 81px);
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, .3);
+    }
+    &__list {
+        @include cf();
+        @media($media-md) {
+            margin-top: 7px;
+        }
+    }
+    &__item {
+        @include container;
+        float: left;
+        z-index: 10;
+        overflow: hidden;
+        position: relative;
+        height: 254px;
+        @media($media-sm) {
+            height: 319px;
+        }
+        @media($media-md) {
+            height: 380px;
+        }
+        @media($media-md) {
+            height: 319px;
+        }
+        transition:opacity .1s;
+        &.hide {
+            opacity: 0;
+            transition: opacity .2s;
+            .slider-main {
+                &__title {
+                    margin-top: 80px;
+                    &-top {
+                        bottom: -72px;
+                    }
+                    &-bottom {
+                        top: -72px;
+                    }
+                }
+                &__description {
+                    opacity: 0;
+                    bottom: -40px;
+                }
+            }
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+    &__arrows {
+        height: 41px;
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include container;
+        animation-duration: 4s;
+        @media($media-sm) {
+            height: 118px;
+            padding-top: 42px;
+        }
+        @media($media-md) {
+            height: 101px;
+            padding-top: 0;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        line-height: 1.278em;
+        margin-bottom: 0;
+        transition: opacity $time, line-height $time, margin-top $time;
+        @media($media-sm) {
+            margin-bottom: 29px;
+            max-width: 100 / 6 *4%;
+        }
+        @media($media-md) {
+            line-height: 1.05em;
+        }
+        &-overflow {
+            overflow: hidden;
+        }
+        &-top {
+            position: relative;
+            bottom: 0;
+            transition: bottom $time;
+        }
+        &-bottom {
+            position: relative;
+            top: 0;
+            transition: top $time;
+        }
+        &.load {
+            margin-top: 80px;
+            .slider-main__title {
+                &-top {
+                    bottom: -75px;
+                }
+                &-bottom {
+                    top: -75px;
+                }
+            }
+        }
+    }
+    &__description {
+        line-height: 22px;
+        position: relative;
+        bottom: 0;
+        transition: opacity $time .2s, bottom $time .2s;
+        @media($media-sm) {
+            max-width: 100 / 6 *4%;
+        }
+        @media($media-md) {
+            max-width: 470px;
+        }
+    }
+    &__video {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -2;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    &__next {
+        position: absolute;
+        right: 0;
+        top: 42%;
+        display: flex;
+        margin-right: -150px;
+        cursor: pointer;
+        z-index: 20;
+        transition: margin-right .3s;
+        &.load {
+            .slider-main__next-text {
+                margin-right: -200px;
+            }
+        }
+        @media($media-md) {
+            letter-spacing: 2px;
+            top: 43%;
+        }
+        &-text {
+            transform: rotate(90deg);
+            font-size: 10px;
+            margin-top: 45px;
+            position: relative;
+            right: 0;
+            transition: right .3s .3s;
+        }
+        &-img {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        &:hover {
+            margin-right: -20px;
+            transition: margin-right .3s .3s;
+            .slider-main {
+                &__next-text {
+                    transition: right .3s;
+                    right: -200px;
+                }
+            }
+        }
+    }
+}

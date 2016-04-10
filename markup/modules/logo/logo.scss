@@ -1,0 +1,59 @@
+.logo {
+    &__icon {
+        fill: $red;
+        height: 17px;
+        transition: fill .3s;
+        &:hover {
+            fill: $blue;
+        }
+        @media($media-sm) {
+            height: 23px;
+            display: inline-block;
+        }
+        @media($media-sm) {
+            height: 25px;
+        }
+    }
+    &__text {
+        display: none;
+        transition: fill .3s;
+        &:hover {
+            fill: $blue;
+        }
+        @media($media-sm) {
+            display: inline-block;
+            margin-left: 58px;
+            height: 23px;
+            fill: $red;
+        }
+        @media($media-md) {
+            margin-left: 43px;
+        }
+    }
+    &-navigation {
+        text-align: center;
+        padding-top: 17px;
+        @media ($media-md) {
+            position: relative;
+            z-index: 100;
+        }
+        &__icon {
+            @extend .logo__icon;
+            fill: $white;
+            &:hover {
+                fill: $red;
+            }
+        }
+    }
+}
+/* 
+.header.active {
+    .logo {
+        &__icon {
+            opacity: 0;
+        }
+        &__text {
+            opacity: 0;
+        }
+    }
+} */
