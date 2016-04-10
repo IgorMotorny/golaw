@@ -1,0 +1,29 @@
+.breadcrumbs{
+	&__item{
+		display: inline-block;
+		vertical-align: middle;
+		color: $white;
+		position: relative;
+		font-size: 12px;
+		&:not(:first-child):before{
+			content: ".";
+			display: inline-block;
+			vertical-align: bottom;
+			padding-right: 6px;
+			padding-left: 4px;
+		}
+	}
+	
+	&__practices{
+		display: none;
+		&.active{
+			display: inline-block;
+		}
+	}
+	&__sectors{
+		display: none;
+		&.active{
+			display: inline-block;
+		}
+	}
+}

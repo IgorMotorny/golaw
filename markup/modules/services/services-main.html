@@ -1,0 +1,33 @@
+<div class="services-main">
+    <div class="services-main__overlay">
+        <div class="services-main__head">
+            <h3 class="services-main__header">services</h3>
+            <div class="services-main__right">
+                {{> breadcrumbs/breadcrumbs breadcrumbs.services.practices}}
+                {{> breadcrumbs/breadcrumbs breadcrumbs.services.sectors}}
+                {{> hamburger/hamburger-services}}
+            </div>
+            
+        </div>
+        <div class="services-main__content">
+            <div class="services-main__menu">
+                <a href="#" class="services-main__title" id="services-main__practices" data-breadcrumbs=".breadcrumbs__practices">
+            {{> arrow/arrow-navigation}}Practices
+        </a>
+                <a href="#" class="services-main__title" id="services-main__sectors" data-breadcrumbs=".breadcrumbs__sectors">
+           {{> arrow/arrow-navigation}} Sectors
+        </a>
+            </div>
+            <div class="services-main__items">
+                <div class="services-main__practices">
+                    {{#each services.partices}}
+                    <a href="#" class="services-main__link ">{{> arrow/arrow-navigation}}{{this}}</a> {{/each}}
+                </div>
+                <div class="services-main__sectors">
+                    {{#each services.sectors}}
+                    <a href="#" class="services-main__link">{{> arrow/arrow-navigation}}{{this}}</a> {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

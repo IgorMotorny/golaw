@@ -1,0 +1,40 @@
+// Mixins.
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin cf {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+@mixin blocks-justify {
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+@mixin container {
+    padding-left: 10px;
+    padding-right: 10px;
+    @media screen and ($media-sm) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    @media screen and ($media-md) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}

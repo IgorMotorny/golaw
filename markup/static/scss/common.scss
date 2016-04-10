@@ -1,0 +1,50 @@
+// Common styles of the project
+html,
+body {
+    font-family: $roboto;
+    font-size: 14px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.page {
+    position: relative;
+    overflow-x: hidden;
+    @media($media-md){
+    min-height: calc(100vh - 105px - 81px);
+
+    }
+
+}
+
+.page__wrapper {
+    // min-height: 100%;
+    // margin-bottom: -50px;
+}
+
+* html .page__wrapper {}
+
+
+.page__buffer {
+    height: 50px;
+}
+
+h1 {
+    font-family: $gotham;
+    font-weight: 900;
+    font-size: 36px;
+    @media($media-sm) {
+        font-size: 65px;
+    }
+    @media($media-md) {
+        font-size: 80px;
+    }
+}
+
+p {
+    line-height: 24px;
+}

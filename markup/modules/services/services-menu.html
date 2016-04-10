@@ -1,0 +1,18 @@
+<div class="services-menu">
+    <div class="services-menu__block">
+        <a href="#" class="services-menu__title">
+            Practices
+        </a>
+        {{#each services.partices}}
+			<a href="#" class="services-menu__link">{{> arrow/arrow-navigation}}{{this}}</a>
+        {{/each}}
+    </div>
+    <div class="services-menu__block">
+        <a href="#" class="services-menu__title">
+            Sectors
+        </a>
+        {{#each services.sectors}}
+			<a href="#" class="services-menu__link">{{> arrow/arrow-navigation}}{{this}}</a>
+        {{/each}}
+    </div>
+</div>
